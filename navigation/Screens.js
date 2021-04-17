@@ -219,13 +219,7 @@ function ComponentsStack(props) {
 export default function OnboardingStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="none">
-      <Stack.Screen
-        name="Onboarding"
-        component={OnboardingScreen}
-        option={{
-          headerTransparent: true
-        }}
-      />
+
       <Stack.Screen name="App" component={AppStack} />
     </Stack.Navigator>
   );
@@ -235,14 +229,14 @@ function WomanStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="screen">
       <Stack.Screen
-        name="Woman"
+        name="Sofas"
         component={WomanScreen}
         options={{
           header: ({ navigation, scene }) => (
             <Header
               search
               options
-              title="Woman"
+              title="Sofas"
               navigation={navigation}
               scene={scene}
             />
@@ -993,7 +987,7 @@ function AppStack(props) {
         }}
       />
       <Drawer.Screen
-        name="Woman"
+        name="Sofas"
         component={WomanStack}
         options={{
           drawerIcon: ({ focused }) => (

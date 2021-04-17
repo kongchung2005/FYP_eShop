@@ -2,6 +2,8 @@ import React from 'react';
 import * as Font from 'expo-font';
 import { createIconSetFromIcoMoon } from '@expo/vector-icons';
 import { Icon } from 'galio-framework';
+import { MaterialCommunityIcons } from '@expo/vector-icons/MaterialCommunityIcons';
+
 
 import GalioConfig from '../assets/fonts/galioExtra';
 const GalioExtra = require('../assets/fonts/galioExtra.ttf');
@@ -24,9 +26,15 @@ export default class IconExtra extends React.Component {
       if (family === 'GalioExtra') {
         return <IconGalioExtra name={name} family={family} {...rest} />;
       }
-      return <Icon name={name} family={family} {...rest} />;
-    }
+      if (family === 'MaterialCommunityIcons') {
+      console.log('aaa');
+        return <MaterialCommunityIcons name={name} family={family} {...rest} />;
 
+      }
+
+      return <Icon name={name} family={family} {...rest} />;
+    
+  }
     return null;
   }
 }
