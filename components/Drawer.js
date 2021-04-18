@@ -23,8 +23,8 @@ class DrawerItem extends React.Component {
         return (
           <Icon
             size={16}
-            name="md-woman"
-            family="ionicon"
+            name="sofa"
+            family="material-community"
             color={focused ? "white" : materialTheme.COLORS.MUTED}
           />
         );
