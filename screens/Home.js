@@ -37,7 +37,7 @@ export default class Home extends React.Component {
         </Button>
         <Button shadowless style={styles.tab} onPress={() => navigation.navigate('Deals')}>
           <Block row middle>
-            <Icon size={16} name="camera-18" family="GalioExtra" style={{ paddingRight: 8 }} />
+            <Icon size={16} name="camera-18" family="GalioExtra" style={{ paddingRight:8 }} />
             <Text size={16} style={styles.tabTitle}>Best Deals</Text>
           </Block>
         </Button>

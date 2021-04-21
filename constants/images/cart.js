@@ -1,5 +1,7 @@
 export default {
   products: [
+
+    /*
     {
       id: 1,
       title: 'Hardly Anything Takes More Coura...',
@@ -42,7 +44,7 @@ export default {
       stock: true,
       qty: 1,
       full: true,
-    },
+    },*/
   ],
   suggestions: [
     {

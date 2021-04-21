@@ -17,10 +17,16 @@ import Images from "../constants/Images";
 import { iPhoneX, HeaderHeight } from "../constants/utils";
 const { height, width } = Dimensions.get('window');
 
+import { ProductCart } from '../components';
+
 export default class Product extends React.Component {
   state = {
     selectedSize: null,
+    //cart: cartItems.products,
   };
+
+
+
 
   scrollX = new Animated.Value(0);
 
@@ -109,6 +115,33 @@ export default class Product extends React.Component {
     )
   }
 
+
+
+ /* renderHorizontalProduct = ({ item }) => {
+    return (
+      <Block style={{ marginRight: theme.SIZES.BASE }}>
+        <Product
+          product={item}
+          priceColor={materialTheme.COLORS.ACTIVE}
+          imageStyle={{ width: 'auto', height: 94 }}
+          style={{ width: width / 2.88 }}
+        />
+        <Button
+          center
+          shadowless
+          color={materialTheme.COLORS.ACTIVE}
+          style={styles.optionsButton}
+          textStyle={[styles.optionsButtonText, { color: 'white' }]}
+          onPress={() => this.handleAdd(item)}
+        >
+          ADD TO CART
+        </Button>
+      </Block>
+    )
+  }*/
+
+
+
   render() {
     const { selectedSize } = this.state;
     const { navigation, route } = this.props;
@@ -166,13 +199,15 @@ export default class Product extends React.Component {
                     </Block>
                   </Block>
                 </Block>
-                <Button
-                  shadowless
-                  style={styles.addToCart}
-                  color={materialTheme.COLORS.BUTTON_COLOR}
-                  onPress={() => navigation.navigate('Cart')}>
-                  ADD TO CART
-                </Button>
+  <Button
+  shadowless
+  style={styles.addToCart}
+  color={materialTheme.COLORS.BUTTON_COLOR}
+  onPress={() => navigation.navigate('Cart')}>
+  ADD TO CART
+</Button>
+
+
               </Block>
             </ScrollView>
           </Block>

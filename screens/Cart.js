@@ -178,7 +178,7 @@ export default class Cart extends React.Component {
         <Block center>
           <Button style={styles.checkout}
             color={materialTheme.COLORS.ACTIVE}
-            onPress={() => navigation.navigate('Sign In')} >
+            onPress={() => navigation.navigate('SignIn')} >
             PROCEED TO CHECKOUT
           </Button>
         </Block>
