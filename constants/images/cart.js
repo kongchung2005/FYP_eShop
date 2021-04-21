@@ -11,13 +11,13 @@ export default {
       qty: 1,
       horizontal: true,
     },
+    
     {
-      id: 2,
+      
       title: 'Our experts at Bikesales keep you...',
       image: 'https://images.unsplash.com/photo-1526892118835-95501a44c960?fit=crop&w=840&q=80',
       price: 220,
-      stock: true,
-      qty: 1,
+
     },
     {
       id: 3,
@@ -44,7 +44,7 @@ export default {
       stock: true,
       qty: 1,
       full: true,
-    },*/
+    },
   ],
   suggestions: [
     {
@@ -83,6 +83,6 @@ export default {
       // image: 'https://source.unsplash.com/X8siGp-Ie00/840x840',
       image: 'https://images.unsplash.com/photo-1536364127590-1594e3161294?crop=entropy&w=840&h=840&fit=crop',
       price: 180,
-    },
+    },*/
   ]
 }

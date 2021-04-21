@@ -19,13 +19,17 @@ const { height, width } = Dimensions.get('window');
 
 import { ProductCart } from '../components';
 
+
 export default class Product extends React.Component {
   state = {
     selectedSize: null,
     //cart: cartItems.products,
   };
 
-
+  test = () => {
+    const test = product.ti
+     
+  }
 
 
   scrollX = new Animated.Value(0);
@@ -200,10 +204,11 @@ export default class Product extends React.Component {
                   </Block>
                 </Block>
   <Button
-  shadowless
+  shadowless  
   style={styles.addToCart}
   color={materialTheme.COLORS.BUTTON_COLOR}
-  onPress={() => navigation.navigate('Cart')}>
+  onPress={() => this.props.navigation.navigate('Cart',{title:product.title,price:product.price,image:product.image})}>
+ 
   ADD TO CART
 </Button>
 

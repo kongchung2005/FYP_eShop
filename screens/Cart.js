@@ -8,10 +8,17 @@ import cartItems from '../constants/images/cart';
 
 const { width } = Dimensions.get('screen');
 
-export default class Cart extends React.Component {
-  state = {
-    cart: cartItems.products,
-  }
+
+
+
+export default class Cart extends React.Component { 
+
+state = {
+  cart:cartItems.products
+}
+
+
+
 
   handleQuantity = (id, qty) => {
     const { cart } = this.state;
@@ -152,6 +159,8 @@ export default class Cart extends React.Component {
           renderItem={this.renderHorizontalProduct}
         />
       </Block>
+
+      
     )
   }
 
@@ -198,7 +207,8 @@ export default class Cart extends React.Component {
         <Block center style={{ paddingHorizontal: theme.SIZES.BASE }}>
           <Button flex center style={styles.checkout}
             color={materialTheme.COLORS.ACTIVE}
-            onPress={() => navigation.navigate('SignIn')} >
+            onPress={() => console.log(this.state)} >
+          
             PROCEED TO CHECKOUT
           </Button>
         </Block>
@@ -229,16 +239,25 @@ export default class Cart extends React.Component {
   }
 
   render() {
+    const {title,price,image} = this.props.route.params;
+
     return (
+  
+      
+      
       <Block flex center style={styles.cart}>
+          
         <FlatList
+         
           data={this.state.cart}
           renderItem={this.renderProduct}
           showsVerticalScrollIndicator={false}
           keyExtractor={(item, index) => `${index}-${item.title}`}
           ListEmptyComponent={this.renderEmpty()}
           ListHeaderComponent={this.renderHeader()}
-          ListFooterComponent={this.renderFooter()} />
+          ListFooterComponent={this.renderFooter()} 
+          
+          />
       </Block>
     );
   }
