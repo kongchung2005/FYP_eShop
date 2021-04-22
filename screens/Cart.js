@@ -24,7 +24,7 @@ state = {
     const { cart } = this.state;
 
     const updatedCart = cart.map(product => {
-      if (product.id === id) product.qty = qty;
+      if (product.title === title) product.qty = qty;
       return product;
     });
 
@@ -239,7 +239,7 @@ state = {
   }
 
   render() {
-    const {title,price,image} = this.props.route.params;
+
 
     return (
   

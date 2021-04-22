@@ -16,21 +16,13 @@ import materialTheme from '../constants/Theme';
 import Images from "../constants/Images";
 import { iPhoneX, HeaderHeight } from "../constants/utils";
 const { height, width } = Dimensions.get('window');
-
-import { ProductCart } from '../components';
-
+import cartItems from '../constants/images/cart';
 
 export default class Product extends React.Component {
   state = {
     selectedSize: null,
-    //cart: cartItems.products,
+    cart: cartItems.products
   };
-
-  test = () => {
-    const test = product.ti
-     
-  }
-
 
   scrollX = new Animated.Value(0);
 
@@ -119,32 +111,21 @@ export default class Product extends React.Component {
     )
   }
 
+  handleAdd = (item) => {
+    const { navigation, route } = this.props;
+    const { cart } = this.state;
 
+    cart.push({
+      ...item,
+      id: cart.length + 1,
+      stock: true,
+      qty: 1,
+    })
 
- /* renderHorizontalProduct = ({ item }) => {
-    return (
-      <Block style={{ marginRight: theme.SIZES.BASE }}>
-        <Product
-          product={item}
-          priceColor={materialTheme.COLORS.ACTIVE}
-          imageStyle={{ width: 'auto', height: 94 }}
-          style={{ width: width / 2.88 }}
-        />
-        <Button
-          center
-          shadowless
-          color={materialTheme.COLORS.ACTIVE}
-          style={styles.optionsButton}
-          textStyle={[styles.optionsButtonText, { color: 'white' }]}
-          onPress={() => this.handleAdd(item)}
-        >
-          ADD TO CART
-        </Button>
-      </Block>
-    )
-  }*/
-
-
+    this.setState({ cart });
+    
+    navigation.navigate('Cart');
+  }
 
   render() {
     const { selectedSize } = this.state;
@@ -153,6 +134,7 @@ export default class Product extends React.Component {
     // const product = params.product;
     const product = route.params?.product;
 
+    
     return (
         <Block flex style={styles.product}>
           <Block flex style={{ position: 'relative' }}>
@@ -203,16 +185,13 @@ export default class Product extends React.Component {
                     </Block>
                   </Block>
                 </Block>
-  <Button
-  shadowless  
-  style={styles.addToCart}
-  color={materialTheme.COLORS.BUTTON_COLOR}
-  onPress={() => this.props.navigation.navigate('Cart',{title:product.title,price:product.price,image:product.image})}>
- 
-  ADD TO CART
-</Button>
-
-
+                <Button
+                  shadowless
+                  style={styles.addToCart}
+                  color={materialTheme.COLORS.BUTTON_COLOR}
+                  onPress={() => this.handleAdd(product)}>
+                  ADD TO CART
+                </Button>
               </Block>
             </ScrollView>
           </Block>

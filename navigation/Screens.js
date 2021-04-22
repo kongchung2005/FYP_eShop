@@ -9,10 +9,10 @@ import { Images, materialTheme } from "../constants/";
 // screens
 import OnboardingScreen from "../screens/Onboarding";
 import HomeScreen from "../screens/Home";
-import WomanScreen from "../screens/Woman";
-import ManScreen from "../screens/Man";
-import KidsScreen from "../screens/Kids";
-import NewCollectionScreen from "../screens/NewCollection";
+import SofasScreen from "../screens/Sofas";
+import ChairsScreen from "../screens/Chairs";
+import DesksScreen from "../screens/Desks";
+import BedsScreen from "../screens/Beds";
 import DealsScreen from "../screens/Deals";
 
 import CategoriesScreen from "../screens/Categories";
@@ -225,12 +225,12 @@ export default function OnboardingStack(props) {
   );
 }
 
-function WomanStack(props) {
+function SofasStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="screen">
       <Stack.Screen
         name="Sofas"
-        component={WomanScreen}
+        component={SofasScreen}
         options={{
           header: ({ navigation, scene }) => (
             <Header
@@ -368,18 +368,18 @@ function WomanStack(props) {
   );
 }
 
-function ManStack(props) {
+function ChairsStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="screen">
       <Stack.Screen
-        name="Man"
-        component={ManScreen}
+        name="Chairs"
+        component={ChairsScreen}
         options={{
           header: ({ navigation, scene }) => (
             <Header
               search
               options
-              title="Man"
+              title="Chairs"
               navigation={navigation}
               scene={scene}
             />
@@ -511,18 +511,18 @@ function ManStack(props) {
   );
 }
 
-function KidsStack(props) {
+function DesksStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="screen">
       <Stack.Screen
-        name="Kids"
-        component={KidsScreen}
+        name="Desks"
+        component={DesksScreen}
         options={{
           header: ({ navigation, scene }) => (
             <Header
               search
               options
-              title="Kids"
+              title="Desks"
               navigation={navigation}
               scene={scene}
             />
@@ -654,18 +654,18 @@ function KidsStack(props) {
   );
 }
 
-function NewCollectionStack(props) {
+function BedsStack(props) {
   return (
     <Stack.Navigator mode="card" headerMode="screen">
       <Stack.Screen
-        name="NewCollection"
-        component={NewCollectionScreen}
+        name="Beds"
+        component={BedsScreen}
         options={{
           header: ({ navigation, scene }) => (
             <Header
               search
               options
-              title="New Collection"
+              title="Beds"
               navigation={navigation}
               scene={scene}
             />
@@ -988,13 +988,13 @@ function AppStack(props) {
       />
       <Drawer.Screen
         name="Sofas"
-        component={WomanStack}
+        component={SofasStack}
         options={{
           drawerIcon: ({ focused }) => (
             <Icon
               size={16}
-              name="md-woman"
-              family="ionicon"
+              name="sofa"
+              family="material-community"
               color={focused ? "white" : materialTheme.COLORS.MUTED}
               style={{ marginLeft: 4, marginRight: 4 }}
             />
@@ -1002,42 +1002,42 @@ function AppStack(props) {
         }}
       />
       <Drawer.Screen
-        name="Man"
-        component={ManStack}
+        name="Chairs"
+        component={ChairsStack}
         options={{
           drawerIcon: ({ focused }) => (
             <Icon
               size={16}
-              name="man"
-              family="entypo"
+              name="chair"
+              family="font-awesome-5"
               color={focused ? "white" : materialTheme.COLORS.MUTED}
             />
           )
         }}
       />
       <Drawer.Screen
-        name="Kids"
-        component={KidsStack}
+        name="Desks"
+        component={DesksStack}
         options={{
           drawerIcon: ({ focused }) => (
             <Icon
               size={16}
-              name="baby"
-              family="GalioExtra"
+              name="desk"
+              family="material-community"
               color={focused ? "white" : materialTheme.COLORS.MUTED}
             />
           )
         }}
       />
       <Drawer.Screen
-        name="New Collection"
-        component={NewCollectionStack}
+        name="Beds"
+        component={BedsStack}
         options={{
           drawerIcon: ({ focused }) => (
             <Icon
               size={16}
-              name="grid-on"
-              family="material"
+              name="md-bed-outline"
+              family="Ionicon"
               color={focused ? "white" : materialTheme.COLORS.MUTED}
             />
           )

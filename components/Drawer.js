@@ -28,30 +28,30 @@ class DrawerItem extends React.Component {
             color={focused ? "white" : materialTheme.COLORS.MUTED}
           />
         );
-      case "Man":
+      case "Chairs":
         return (
           <Icon
             size={15}
-            name="man"
-            family="entypo"
+            name="chair"
+            family="font-awesome-5"
             color={focused ? "white" : materialTheme.COLORS.MUTED}
           />
         );
-      case "Kids":
+      case "Desks":
         return (
           <Icon
             size={15}
-            name="baby"
-            family="GalioExtra"
+            name="desk"
+            family="material-community"
             color={focused ? "white" : materialTheme.COLORS.MUTED}
           />
         );
-      case "New Collection":
+      case "Beds":
         return (
           <Icon
             size={15}
-            name="grid-on"
-            family="material"
+            name="md-bed-outline"
+            family="Ionicon"
             color={focused ? "white" : materialTheme.COLORS.MUTED}
           />
         );

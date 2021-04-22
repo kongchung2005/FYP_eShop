@@ -36,9 +36,9 @@ function CustomDrawerContent({
   const screens = [
     "Home",
     "Sofas",
-    "Man",
-    "Kids",
-    "New Collection",
+    "Chairs",
+    "Desks",
+    "Beds",
     "Profile",
     "Settings",
     "Components"
